@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.popularmovieskt.model.Movie
 import com.squareup.picasso.Picasso
@@ -26,6 +27,6 @@ class MovieAdapter(var items: List<Movie>, val context: Context) : RecyclerView.
 
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val movieImageView = view.movie_image
+        val movieImageView: ImageView = view.movie_image
     }
 }
