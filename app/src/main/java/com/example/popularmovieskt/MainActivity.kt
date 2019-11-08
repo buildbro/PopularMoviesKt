@@ -40,8 +40,14 @@ class MainActivity : AppCompatActivity() {
 
         client.get(url, params, object : TextHttpResponseHandler() {
             override fun onSuccess(statusCode: Int, headers: Array<Header>, res: String) {
-                mMoviesList.clear()
-                mMoviesList.addAll(MoviesJsonUtils.parseMoviesJson(res)!!)
+
+                mMoviesList.apply {
+                    clear()
+                    addAll(MoviesJsonUtils.parseMoviesJson(res)!!)
+                }
+
+                //mMoviesList.clear()
+                //mMoviesList.addAll(MoviesJsonUtils.parseMoviesJson(res)!!)
                 movieAdapter.notifyDataSetChanged()
 
             }
@@ -51,5 +57,7 @@ class MainActivity : AppCompatActivity() {
             }
         })
     }
+
+
 
 }
